@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/env"
+    ]
+  ],
+  "env": {
+    "rollup": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "modules": false
+          }
+        ]
+      ]
+    }
+  }
+}
