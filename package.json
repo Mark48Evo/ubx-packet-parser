@@ -1,6 +1,6 @@
 {
   "name": "@mark48evo/ubx-packet-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A UBX Protocol packet parser",
   "author": "Aurimas Niekis <aurimas@niekis.lt> (https://github.com/Mark48Evo)",
   "license": "MIT",
