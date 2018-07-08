@@ -185,7 +185,7 @@ function sat(packet) {
       svUsed: bitToBool(packet.payload.readUInt8(16 + (12 * i)), 3),
       health: {
         raw: 0,
-        string: `${(packet.payload.readUInt8(16 + (12 * i)) >> 5) % 2}$${(packet.payload.readUInt8(16 + (12 * i)) >> 5) % 2}`,
+        string: `${(packet.payload.readUInt8(16 + (12 * i)) >> 5) % 2}${(packet.payload.readUInt8(16 + (12 * i)) >> 4) % 2}`,
       },
       diffCorr: bitToBool(packet.payload.readUInt8(16 + (12 * i)), 6),
       smoothed: bitToBool(packet.payload.readUInt8(16 + (12 * i)), 7),
@@ -241,16 +241,16 @@ function sat(packet) {
 
     switch (flags.health.string) {
       case '00':
-        flags.healthraw = 0;
-        flags.healthstring = 'unknown';
+        flags.health.raw = 0;
+        flags.health.string = 'unknown';
         break;
       case '01':
-        flags.healthraw = 1;
-        flags.healthstring = 'healthy';
+        flags.health.raw = 1;
+        flags.health.string = 'healthy';
         break;
       case '10':
-        flags.healthraw = 2;
-        flags.healthstring = 'unhealthy';
+        flags.health.raw = 2;
+        flags.health.string = 'unhealthy';
         break;
     }
 
