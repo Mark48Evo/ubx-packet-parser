@@ -15,6 +15,8 @@
   "main": "dist/index.js",
   "scripts": {
     "rollup": "rollup -c rollup.config.js",
+    "prepublishOnly": "rollup -c rollup.config.js",
+    "pretest": "eslint ./src",
     "lint": "eslint ./src",
     "lint-fix": "eslint ./src --fix"
   },
